@@ -24,3 +24,26 @@ body {
     background: silver;
     height: 50px;
 }
+
+#preview-box {
+    background: white;
+}
+
+/*Emoji Styles*/
+ul {
+    list-style: none;
+}
+
+#action-list {
+    margin-top: 10px;
+}
+
+li {
+    float: left;
+    margin-right: 30px;
+    margin-top: 10px;
+}
+
+#icons {
+    font-size: 20px;
+}
