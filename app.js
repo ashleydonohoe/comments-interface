@@ -46,7 +46,6 @@ function showPreview() {
     previewArea.innerHTML = newHTML;
 }
 
-
 function clearCommentBox() {
     commentForm.value = "";
     previewArea.innerHTML = "";
