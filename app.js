@@ -6,22 +6,40 @@ var actionObject = {
     "thumbsUp": '<i class="fa fa-thumbs-up" aria-hidden="true"></i>',
     "thumbsDown": '<i class="fa fa-thumbs-down" aria-hidden="true"></i>',
     "addLink": '<a href=""></a>',
-    "addImage": '<img src=">'
+    "addImage": '<img src="" style="display:block;">'
 };
+
+var commentForm = document.getElementById("comment-box");
+var previewArea = document.getElementById("preview-box");
+var previewButton = document.getElementById("preview-comment");
+var clearButton = document.getElementById("clear-comment");
+
+clearButton.addEventListener("click", clearCommentBox, false);
+previewButton.addEventListener("click", showPreview, false);
 
 var commentActions = document.querySelectorAll("#icons li");
-console.log(commentActions);
 
 for(var i = 0; i < commentActions.length;i++) {
-    commentActions[i].addEventListener("click", addToComment, false);
+    commentActions[i].addEventListener("click", getAction, false);
 };
 
-function addToComment() {
+function getAction() {
     var action = this.dataset.action;
     addCode(action);
 }
 
 function addCode(action) {
-    console.log("You want to " + action);
-    console.log(actionObject[action]);
+    commentForm.value += actionObject[action];
+}
+
+function showPreview() {
+   var newHTML = "<p>" + commentForm.value + "</p>";
+    console.log(newHTML);
+    previewArea.innerHTML = newHTML;
+}
+
+
+function clearCommentBox() {
+    commentForm.value = "";
+    previewArea.innerHTML = "";
 }
