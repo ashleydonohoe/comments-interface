@@ -5,8 +5,7 @@ var actionObject = {
     "heart": '<i class="fa fa-heart" aria-hidden="true"></i>',
     "thumbsUp": '<i class="fa fa-thumbs-up" aria-hidden="true"></i>',
     "thumbsDown": '<i class="fa fa-thumbs-down" aria-hidden="true"></i>',
-    "addLink": '<a href=""></a>',
-    "addImage": '<img src="" style="display:block;">'
+    "break": "<br>"
 };
 
 var commentForm = document.getElementById("comment-box");
@@ -29,7 +28,16 @@ function getAction() {
 }
 
 function addCode(action) {
-    commentForm.value += actionObject[action];
+    if(action === "addLink") {
+        var link = prompt("Enter your link below");
+        var title = prompt("Enter the link title below");
+        commentForm.value += "<a href='" + link + "'>" + title + "</a>";
+    } else if(action === "addImage") {
+        var imageURL = prompt("Enter the image URL below:");
+        commentForm.value += '<img style="display:block;" src="' + imageURL + '">';
+    } else {
+        commentForm.value += actionObject[action];
+    }
 }
 
 function showPreview() {

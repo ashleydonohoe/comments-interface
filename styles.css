@@ -33,6 +33,7 @@ body {
 #preview-box {
     background: white;
     height: 400px;
+    padding: 5px;
 }
 
 /*Emoji Styles*/
