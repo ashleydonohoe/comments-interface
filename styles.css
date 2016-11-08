@@ -1,0 +1,26 @@
+body {
+    background-color: #9b59b6;
+}
+
+.container {
+    width: 80%;
+}
+
+.comment-area {
+    margin-top: 5%;
+}
+
+#comment-box,
+#preview-box {
+    height: 150px;
+}
+
+#preview-comment {
+    margin-top: 15px;
+    float: right;
+}
+
+#comment-actions {
+    background: silver;
+    height: 50px;
+}
